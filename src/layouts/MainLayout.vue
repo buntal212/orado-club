@@ -4,9 +4,7 @@
       <q-toolbar>
         <q-btn flat dense round icon="menu" aria-label="Menu" @click="toggleLeftDrawer" />
 
-        <q-toolbar-title> Quasar App </q-toolbar-title>
-
-        <div>Quasar v{{ $q.version }}</div>
+        <q-toolbar-title> ORADO CLUB </q-toolbar-title>
       </q-toolbar>
     </q-header>
 
@@ -78,4 +76,11 @@ const leftDrawerOpen = ref(false)
 function toggleLeftDrawer() {
   leftDrawerOpen.value = !leftDrawerOpen.value
 }
+
 </script>
+
+<style scoped>
+.q-header { background: #006b4f; }
+.q-toolbar { min-height: 58px; }
+.q-toolbar-title { font-size: 14px; font-weight: 700; }
+</style>

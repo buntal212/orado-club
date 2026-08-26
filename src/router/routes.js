@@ -2,10 +2,20 @@ const routes = [
   {
     path: '/',
     component: () => import('@/layouts/MainLayout.vue'),
+    meta: { requiresAuth: true },
     children: [
       { path: '', component: () => import('@/pages/IndexPage.vue') },
-      { path: 'second', component: () => import('@/pages/SecondPage.vue') },
     ],
+  },
+  {
+    path: '/login',
+    component: () => import('@/pages/Login/IndexPage.vue'),
+    meta: { guestOnly: true },
+  },
+  {
+    path: '/pendaftaran-club',
+    component: () => import('@/layouts/MainLayout.vue'),
+    children: [{ path: '', component: () => import('@/pages/PendaftaranClubPage.vue') }],
   },
 
   // Always leave this as last one,
