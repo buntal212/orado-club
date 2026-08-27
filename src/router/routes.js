@@ -5,6 +5,8 @@ const routes = [
     meta: { requiresAuth: true },
     children: [
       { path: '', component: () => import('@/pages/IndexPage.vue') },
+      { path: 'akun', component: () => import('@/pages/AkunPage.vue') },
+      { path: 'anggota', component: () => import('@/pages/anggota/ListAnggotaPage.vue') },
     ],
   },
   {

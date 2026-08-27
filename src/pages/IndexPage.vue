@@ -22,7 +22,7 @@
 
     <nav class="bottom-nav" aria-label="Navigasi utama">
       <button type="button" class="nav-item nav-item--active"><q-icon name="home" /><span>Home</span></button>
-      <button type="button" class="nav-item"><q-icon name="person_outline" /><span>Akun</span></button>
+      <button type="button" class="nav-item" @click="router.push('/akun')"><q-icon name="person_outline" /><span>Akun</span></button>
       <button type="button" class="nav-item" @click="handleLogout"><q-icon name="logout" /><span>Logout</span></button>
     </nav>
   </q-page>
@@ -37,9 +37,7 @@ const router = useRouter()
 const loginStore = useLoginStore()
 const currentUser = ref(loginStore.user || JSON.parse(localStorage.getItem('orado_club_user') || 'null'))
 const menus = [
-  { title: 'Dashboard Club', icon: 'dashboard' },
-  { title: 'Pendaftaran Club', icon: 'app_registration', to: '/pendaftaran-club' },
-  { title: 'Data Anggota', icon: 'groups' },
+  { title: 'Data Anggota Club', icon: 'groups', to: '/anggota' },
   { title: 'Keuangan', icon: 'account_balance_wallet' },
   { title: 'Pemasukan', icon: 'south' },
   { title: 'Pengeluaran', icon: 'north' },
