@@ -8,10 +8,14 @@ export const useAnggotaStore = defineStore('anggota', {
     saving: false,
     anggota: [],
     search: '',
+    ageGroup: '',
+    gender: '',
     form: {
       name: '',
       email: '',
       nik: '',
+      tanggal_lahir: '',
+      jenis_kelamin: '',
       no_hp: '',
     },
   }),
@@ -20,7 +24,11 @@ export const useAnggotaStore = defineStore('anggota', {
       this.loading = true
       try {
         const response = await api.get('/v2/club/anggota', {
-          params: { search: this.search || undefined },
+          params: {
+            search: this.search || undefined,
+            age_group: this.ageGroup || undefined,
+            gender: this.gender || undefined,
+          },
         })
         this.anggota = response.data?.data ?? []
       } catch (error) {
@@ -51,6 +59,8 @@ export const useAnggotaStore = defineStore('anggota', {
             errors?.name?.[0] ||
             errors?.email?.[0] ||
             errors?.nik?.[0] ||
+            errors?.tanggal_lahir?.[0] ||
+            errors?.jenis_kelamin?.[0] ||
             errors?.no_hp?.[0] ||
             error.response?.data?.message ||
             'Anggota gagal disimpan.',
@@ -65,6 +75,8 @@ export const useAnggotaStore = defineStore('anggota', {
       this.form.name = ''
       this.form.email = ''
       this.form.nik = ''
+      this.form.tanggal_lahir = ''
+      this.form.jenis_kelamin = ''
       this.form.no_hp = ''
     },
   },

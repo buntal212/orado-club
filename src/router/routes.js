@@ -7,6 +7,12 @@ const routes = [
       { path: '', component: () => import('@/pages/IndexPage.vue') },
       { path: 'akun', component: () => import('@/pages/AkunPage.vue') },
       { path: 'anggota', component: () => import('@/pages/anggota/ListAnggotaPage.vue') },
+      { path: 'iuran', component: () => import('@/pages/IuranAnggotaPage.vue') },
+      { path: 'pengaturan', component: () => import('@/pages/PengaturanPage.vue') },
+      {
+        path: 'pengaturan/biaya-iuran',
+        component: () => import('@/pages/PengaturanBiayaIuranPage.vue'),
+      },
     ],
   },
   {

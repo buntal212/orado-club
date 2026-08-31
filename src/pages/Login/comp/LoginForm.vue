@@ -7,7 +7,7 @@
     </div>
 
     <q-form class="login-form" @submit="onSubmit">
-      <label class="field-label" for="email">Email atau username</label>
+      <label class="field-label" for="email">Username</label>
       <q-input
         id="email"
         v-model="loginStore.form.email"
@@ -15,8 +15,7 @@
         dense
         hide-bottom-space
         autocomplete="username"
-        placeholder="Masukkan email atau username"
-        :rules="[(value) => !!value || 'Email atau username wajib diisi']"
+        placeholder="Masukkan username"
       >
         <template #prepend>
           <q-icon name="person_outline" />
@@ -33,7 +32,6 @@
         autocomplete="current-password"
         placeholder="Masukkan password"
         :type="loginStore.showPassword ? 'text' : 'password'"
-        :rules="[(value) => !!value || 'Password wajib diisi']"
       >
         <template #prepend>
           <q-icon name="lock_outline" />
